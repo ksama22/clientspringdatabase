@@ -13,6 +13,11 @@ public class Controler {
 	ClientRepository clientRepo;
 	
 	
+	@GetMapping("/")
+	public String getHome() {
+		return "<!DOCTYPE html><html lang=\"en\"><head><title>Document</title></head><body><ul><li><a href='/h2-console'>Database</a></li><li><a href='/clients'>Clients</a></li><li><a href='/clients/1'>Clients/id</a></li></ul></body></html>";
+	}
+	
 	@GetMapping("clients")
 	public List<Client> getStudents() {
 		List<Client> st1List = clientRepo.findAll();
